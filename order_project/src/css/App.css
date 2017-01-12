@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.a11y {
+  position: absolute;
+  top: -9999em;
+}
+
+nav {
+  background: #e27149;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+ul {
+  text-decoration: none;
+  padding-left: 0;
+  margin-top: 0;
+  color: #fff;
+}
+
+li {
+  display: inline-block;
+}
+
+li a {
+  display: inline-block;
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 50px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
