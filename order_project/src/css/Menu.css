@@ -9,9 +9,14 @@ section {
   margin-bottom: 80px;
 }
 
-h1 {
+section h1 {
   font-size: 23px;
   color: #333;
+  cursor: pointer;
+}
+
+section h1:hover {
+  text-decoration: underline;
 }
 
 .chef-name {

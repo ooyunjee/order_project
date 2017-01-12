@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuInfo from './MenuInfo';
+import Order from './Order';
 
 import '../css/Menu.css';
 
@@ -8,6 +9,7 @@ export default class Menu extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      selectedKey: -1,
       menuData: [
         {
           "menu_id": 1,
@@ -54,6 +56,16 @@ export default class Menu extends React.Component {
       ]
     };
 
+    this.handleClick = this.handleClick.bind(this);
+
+  }
+
+  handleClick(key) {
+    this.setState({
+      selectedKey: key
+    });
+
+    console.log(key, 'is selected');
   }
 
   render() {
@@ -62,7 +74,10 @@ export default class Menu extends React.Component {
 
       return data.map((menu, i) => {
         return (
-          <MenuInfo menu={menu} key={i} />
+          <MenuInfo
+            menu={menu}
+            key={i}
+            onClick={() => this.handleClick(i)} />
         );
       });
     };
@@ -71,6 +86,9 @@ export default class Menu extends React.Component {
       <main className="container">
         <h1 className="a11y">Menu</h1>
         <div>{mapToComponent(this.state.menuData)}</div>
+        <Order
+          isSelected={this.state.selectedKey !== -1}
+          menu={this.state.menuData[this.state.selectedKey]}/>
       </main>
     );
   }
