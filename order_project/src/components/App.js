@@ -13,8 +13,7 @@ class App extends React.Component {
         <div>
           <nav>
             <ul className="container">
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/menu'>Menu</Link></li>
+              <li><Link to='/'>plating</Link></li>
             </ul>
           </nav>
           <Match exactly pattern='/' component={Home}/>
