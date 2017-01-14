@@ -40,8 +40,7 @@ export default class Order extends React.Component {
 
   handleOrder() {
     if(this.props.menu.price) {
-      console.log(this.props.menu.price + ' ' + this.state.value);
-      console.log(this.props.menu.price * this.state.value);
+      console.log('price: ' + this.props.menu.price + ', count: ' + this.state.value + ', total: ' + this.props.menu.price * this.state.value);
     }
   }
 
