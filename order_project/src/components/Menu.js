@@ -71,7 +71,6 @@ export default class Menu extends React.Component {
   render() {
 
     const mapToComponent = (data) => {
-
       return data.map((menu, i) => {
         return (
           <MenuInfo
@@ -83,13 +82,21 @@ export default class Menu extends React.Component {
     };
 
     return (
-      <main className="container">
-        <h1 className="a11y">Menu</h1>
-        <div>{mapToComponent(this.state.menuData)}</div>
-        <Order
-          isSelected={this.state.selectedKey !== -1}
-          menu={this.state.menuData[this.state.selectedKey]}/>
-      </main>
+      <div>
+        <header className="menu-header">
+          <h1>Enjoy plating!</h1>
+        </header>
+        <main className="container">
+          <h1 className="a11y">Menu</h1>
+          <section className="menu-list">
+            <h1 className="a11y">Menu List</h1>
+            {mapToComponent(this.state.menuData)}
+          </section>
+          <Order
+            isSelected={this.state.selectedKey !== -1}
+            menu={this.state.menuData[this.state.selectedKey]}/>
+        </main>
+      </div>
     );
   }
 }
