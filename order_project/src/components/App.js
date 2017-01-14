@@ -4,6 +4,7 @@ import Home from './Home';
 import Menu from './Menu';
 
 import '../css/App.css';
+import '../css/normalize.css';
 import '../css/font-awesome.min.css';
 
 export default class App extends React.Component {
