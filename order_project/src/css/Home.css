@@ -1,0 +1,42 @@
+.home {
+  text-align: center;
+  color: #333;
+}
+
+.home-title {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 80px;
+  margin-top: 150px;
+}
+
+.home-desc {
+  position: relative;
+  top: -200px;
+  letter-spacing: 0.2em;
+  font-size: 25px;
+}
+
+.home-go-to-menu {
+  display: inline-block;
+  background: #e27149;
+  width: 10em;
+  height: 3em;
+  line-height: 3em;
+  border-radius: 3px;
+  transition: all .2s;
+}
+
+.home-go-to-menu:hover {
+  background: #333;
+}
+
+.home-go-to-menu a {
+  display: inline-block;
+  color: #fff;
+  width: 10em;
+  height: 3em;
+  font-size: 16px;
+  font-weight: lighter;
+  letter-spacing: 0.1em;
+}
