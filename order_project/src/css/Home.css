@@ -1,6 +1,7 @@
 .home {
   text-align: center;
   color: #333;
+  height: 100vh;
 }
 
 .home-title {
@@ -24,7 +25,6 @@
   height: 3em;
   line-height: 3em;
   border-radius: 3px;
-  transition: all .2s;
 }
 
 .home-go-to-menu:hover {
