@@ -1,12 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Link, Match } from 'react-router';
 import { shallow } from 'enzyme';
-import { renderToString } from 'react-dom/server'
 import App from '../components/App';
 
 describe('Home', () => {
   let app;
-  const TEXT = 'TEXT';
 
   beforeEach( () => {
     app = shallow(<App />);
