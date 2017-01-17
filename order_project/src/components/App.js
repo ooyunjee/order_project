@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Link, Match } from 'react-router';
+import { BrowserRouter as Router, Link, Match, Miss } from 'react-router';
 import Home from './Home';
 import Menu from './Menu';
+import NotFound from './NotFound';
 
 import '../css/App.css';
 import '../css/normalize.css';
@@ -21,6 +22,7 @@ export default class App extends React.Component {
           </nav>
           <Match exactly pattern='/' component={Home}/>
           <Match pattern='/menu' component={Menu}/>
+          <Miss component={NotFound} />
           <footer className="footer">
             <p><i className="fa fa-phone"></i>+82 070 7777 6114</p>
             <address><i className="fa fa-map-marker"></i>서울시 논현동 122-8 동화히스토리 지하1층, 플레이팅</address>
