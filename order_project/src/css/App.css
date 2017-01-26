@@ -90,3 +90,8 @@ li a:hover::after {
 .footer address {
   font-style: normal;
 }
+
+.not-found {
+  height: 100vh;
+  text-align: center;
+}
