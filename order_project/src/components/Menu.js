@@ -68,18 +68,18 @@ export default class Menu extends React.Component {
     console.log(key, 'is selected');
   }
 
-  render() {
+  mapToComponent(data) {
+    return data.map((menu, i) => {
+      return (
+        <MenuInfo
+          menu={menu}
+          key={i}
+          onClick={() => this.handleClick(i)} />
+      );
+    });
+  }
 
-    const mapToComponent = (data) => {
-      return data.map((menu, i) => {
-        return (
-          <MenuInfo
-            menu={menu}
-            key={i}
-            onClick={() => this.handleClick(i)} />
-        );
-      });
-    };
+  render() {
 
     return (
       <div>
@@ -90,7 +90,7 @@ export default class Menu extends React.Component {
           <h1 className="a11y">Menu</h1>
           <section className="menu-list">
             <h1 className="a11y">Menu List</h1>
-            {mapToComponent(this.state.menuData)}
+            {this.mapToComponent(this.state.menuData)}
           </section>
           <Order
             isSelected={this.state.selectedKey !== -1}
