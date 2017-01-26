@@ -56,9 +56,9 @@ export default class Order extends React.Component {
       <div>
         <h2>{this.props.menu.menu_name}</h2>
         <div className="order-counter">
-          <button onClick={this.handleMinusClick}>-</button>
+          <button className="minus" onClick={this.handleMinusClick}>-</button>
           <span>{this.state.value}</span>
-          <button onClick={this.handlePlusClick}>+</button>
+          <button className="plus" onClick={this.handlePlusClick}>+</button>
         </div>
         {price}
       </div>
@@ -85,5 +85,5 @@ Order.defaultProps = {
 };
 
 Order.propTypes = {
-  contact: React.PropTypes.object
+  menu: React.PropTypes.object
 };
