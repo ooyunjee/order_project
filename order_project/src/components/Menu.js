@@ -1,10 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import MenuInfo from './MenuInfo';
 import Order from './Order';
 
+import { getMenuList } from '../actions/MenuActions';
+
 import '../css/Menu.css';
 
-export default class Menu extends React.Component {
+class Menu extends React.Component {
 
   constructor(props){
     super(props);
@@ -60,7 +63,12 @@ export default class Menu extends React.Component {
 
   }
 
+  componentWillMount() {
+    this.props.onGetMenuList();
+  }
+
   handleClick(key) {
+    console.log('this.props.menuList', this.props.menuList);
     this.setState({
       selectedKey: key
     });
@@ -68,15 +76,18 @@ export default class Menu extends React.Component {
     console.log(key, 'is selected');
   }
 
-  mapToComponent(data) {
-    return data.map((menu, i) => {
-      return (
+  mapToComponent() {
+    const { menuList } = this.props;
+    if (menuList && menuList.length > 0) {
+      return menuList.map((menu, i) => (
         <MenuInfo
           menu={menu}
           key={i}
-          onClick={() => this.handleClick(i)} />
-      );
-    });
+          onClick={() => this.handleClick(i)}
+        />
+      ));
+    }
+    return <div />;
   }
 
   render() {
@@ -90,7 +101,7 @@ export default class Menu extends React.Component {
           <h1 className="a11y">Menu</h1>
           <section className="menu-list">
             <h1 className="a11y">Menu List</h1>
-            {this.mapToComponent(this.state.menuData)}
+            {this.mapToComponent()}
           </section>
           <Order
             isSelected={this.state.selectedKey !== -1}
@@ -100,3 +111,13 @@ export default class Menu extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  menuList: state.MenuReducer.menuList,
+})
+
+const mapDispatchToProps = dispatch => ({
+  onGetMenuList: () => dispatch(getMenuList()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);

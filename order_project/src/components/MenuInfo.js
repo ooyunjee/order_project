@@ -1,16 +1,17 @@
 import React from 'react';
 
 const MenuInfo = (props) => {
+  const { onClick, menu } = props;
   return(
     <article>
-      <h1 onClick={props.onClick}>{props.menu.menu_name}</h1>
+      <h1 onClick={onClick}>{menu.menuInformation.name.korean}</h1>
       <p>
-        <span className="chef-name">{props.menu.chef_name}</span>
-        <span className="price">{props.menu.price}원</span>
+        <span className="chef-name">{menu.menuInformation.chefInformation.name}</span>
+        <span className="price">{menu.menuInformation.price.default}원</span>
       </p>
       <p className="menu-desc">
         <span>Description</span>
-        {props.menu.menu_description}
+        {menu.menuInformation.story}
       </p>
     </article>
   );
